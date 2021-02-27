@@ -50,6 +50,8 @@ app.post("/insert/", (req, res) => {
     data.users.push(user);
 
     db.write(data);
+    console.log(data + "was Written ");
+
 
     res.json({
         ok: true,

@@ -1,26 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <form @submit.prevent="submitform()">
+
+    სახელი: <input  v-model="firstname">
+    გვარი: <input  v-model="lastname">
+
+    <p>{{count}}</p>
+    <button v-on:click="submitform()" type="button">რეგისტრაცია</button>
+  </form>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+
+import axios from 'axios';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: 'app',
+  data() {
+    return {
+      count: ''
+      // this is formdata object to store form values
+    }
+  },
+  methods: {
+    submitform() {
+      axios.post('/insert', {firstname: this.firstname, lastname : this.lastname})
+          .then(res => {
+            console.log(res)
+          })
+          .catch(err => {
+            alert(err)
+          })
+    },
+
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
