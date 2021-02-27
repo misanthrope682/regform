@@ -43,6 +43,7 @@ export default {
       // this is formdata object to store form values
     }
   },
+
   methods: {
     submitform() {
       axios.post('/insert', {firstname: this.firstname, lastname : this.lastname})
@@ -62,8 +63,6 @@ export default {
 
 .container {
   margin: auto;
-  width: 25%;
-  
   margin-top: 50px;
 }
 
@@ -73,5 +72,10 @@ export default {
   
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 
 </style>

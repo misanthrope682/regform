@@ -9,8 +9,11 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
     "core-js": "^3.6.5",
     "form-data": "^4.0.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
     "vue": "^3.0.0"
   },
   "devDependencies": {
